@@ -1,0 +1,38 @@
+body,
+button,
+input,
+textarea {
+    font-family: "Inter", sans-serif !important;
+    margin: 0!important;
+
+}
+
+.css-5xe99f-MuiLinearProgress-bar1 {
+    background-color: #3da9de !important;
+}
+
+.css-t752vm {
+    background-color: #3da9de !important;
+}
+
+.css-ada0pd-MuiSlider-track {
+    background-color: #3da9de !important;
+}
+.css-d3wcwz-MuiTypography-root {
+    margin-top: 2em;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.css-1rwidk3 {
+    height: 100%;
+}
+
+/* Styles for screens wider than 600px (typically desktop devices) */
+@media only screen and (min-width: 600px) {
+    .responsive-paragraph {
+        width: 60%;
+    }
+}
