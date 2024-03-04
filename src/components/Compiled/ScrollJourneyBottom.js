@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
-import Timeline from "./Timeline";
-import ScrollingTextComponent from './ScrollingTextComponent';
+import Timeline from "../Timeline";
+import MasterScrollingTextComponent from '../ScrollingText/MasterScrollingTextComponent';
 
-const texts = ['1. Warmer homes and lower bills', '2. Clean and affordable transport', '3. UK energy security']; // Your texts here
+
+
 
 const confirmation = [
   {
@@ -12,7 +13,7 @@ const confirmation = [
   },
 ];
 
-const ScrollJourney = () => {
+const ScrollJourneyBottom = () => {
   const controls = useAnimation();
   const testRef = useRef(null);
   const scrollRef = useRef(null); // Ref for the scrolling text component
@@ -29,6 +30,8 @@ const ScrollJourney = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  
 
   // Intersection Observer setup
   useEffect(() => {
@@ -96,10 +99,10 @@ const ScrollJourney = () => {
           </motion.span>
         </p>
         
-        <ScrollingTextComponent texts={texts} />
+        <MasterScrollingTextComponent />
       </div>
     </div>
   );
 };
 
-export default ScrollJourney;
+export default ScrollJourneyBottom;

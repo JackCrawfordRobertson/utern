@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import styles from "../styles/page.module.css";
-import ScrollJourney from "../src/components/ScrollJourney";
-import ScrollJourneyLow  from "@/components/ScrollJourneyLow";
+import ScrollJourneyTop from "../src/components/Compiled/ScrollJourneyTop";
+import ScrollJourneyBottom  from "../src/components/Compiled/ScrollJourneyBottom";
 import {ParallaxProvider} from "react-scroll-parallax";
 import AutoPlayVideo from "@/components/AutoPlayVideo";
 
@@ -24,7 +24,7 @@ export default function Home() {
 
             <section className={styles.body}>
                 <ParallaxProvider>
-                    <ScrollJourney />
+                    <ScrollJourneyTop />
                 </ParallaxProvider>
             </section>
 
@@ -33,7 +33,7 @@ export default function Home() {
             </section>
 
             <section className={styles.section_three}>
-                <ScrollJourneyLow />
+                <ScrollJourneyBottom />
             </section>
         </main>
     );

@@ -1,9 +1,9 @@
 import React, {useState, useEffect, useRef} from "react";
 import {motion, useAnimation} from "framer-motion";
-import Timeline from "./Timeline";
-import ImageGrid from "./ImageGrid";
-import ParallaxImage from "../components/ParallaxImage";
-import My3DComponent from "./3DComponent";
+import Timeline from "../Timeline";
+import ImageGrid from "../ImageGrid";
+import ParallaxImage from "../ParallaxImage";
+import My3DComponent from "../3DComponent";
 
 const confrence21_text = [
     {
@@ -40,7 +40,7 @@ const stackedComponentsStyle = {
     width: "100%", // Take full width to respect the parent's layout
 };
 
-const ScrollJourney = () => {
+const ScrollJourneyTop = () => {
     const controls = useAnimation();
     const [ scrolled, setScrolled ] = useState(false);
     const testRef = useRef(null);
@@ -172,4 +172,4 @@ const ScrollJourney = () => {
     );
 };
 
-export default ScrollJourney;
+export default ScrollJourneyTop;

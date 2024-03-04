@@ -16,7 +16,7 @@ const EmissionsPieChart = ({ currentSection }) => {
   }
 
   const data = {
-    labels: ['Remaining Emissions', 'Reduced Emissions'],
+    labels: ['Total UK Emissions', 'Reduced Emissions'],
     datasets: [
       {
         // Removed the 'label' key as per your request
