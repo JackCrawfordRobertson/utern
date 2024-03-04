@@ -2,6 +2,7 @@ import React, { Suspense, useEffect, useState, useRef } from 'react';
 import { Canvas, useThree, useFrame } from '@react-three/fiber';
 import { useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+
 import modelPath from '../../public/untitled.glb';
 
 const Model = ({ scrollPosition }) => {
