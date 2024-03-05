@@ -15,10 +15,7 @@ export default function Home() {
                 </h1>
 
                 <p className="responsive-paragraph">
-                    Explore our AI-powered commentary on climate change. Every 10 minutes, we scour headlines from
-                    Western media outlets for the latest updates on climate change. These headlines are then fed into a
-                    sophisticated language model, which crafts stories in the style of Western news agencies. Can you
-                    discern the difference?
+                Keia Stamaer's Labour Party have been all over the news in recent weeks for the U-turns they have been doing. One of the most iratating for me as a young voter in the UK was the curring of the Green prosperaty plan. This page will explore the scale of this U-Turns. <i>(Best viewed on a desktop or laptop computer)</i>
                 </p>
             </header>
 
