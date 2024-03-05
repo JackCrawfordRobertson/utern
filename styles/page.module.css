@@ -99,6 +99,7 @@
     font-size: 1rem;
 }
 
+
 @media (min-width: 768px) {
     .dateText {
         font-size: 18px;

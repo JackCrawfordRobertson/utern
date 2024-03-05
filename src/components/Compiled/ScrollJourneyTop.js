@@ -144,14 +144,14 @@ const ScrollJourneyTop = () => {
                     <Timeline data={muni_budget} />
                 </motion.div>
 
-                <ParallaxImage src="/images/04.webp" alt="Descriptive text about the image" strength={30} />
+                <ParallaxImage src="/images/04.webp" alt="A Pictuer of Liz Truss"  />
             </div>
             <div style={stackedComponentsStyle}>
                 <motion.div
                     initial={{opacity: 0, y: 100}}
                     animate={{opacity: 1, y: 0}}
                     transition={{duration: 0.8, delay: 0.3}}
-                    style={{width: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}
+                    style={{width: "100%", display: "flex", justifyContent: "center", alignItems: "center", marginTop: "2em"}}
                 >
                     <Timeline data={scale_back} />
                 </motion.div>
