@@ -1,67 +1,47 @@
-import React, { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import EmissionsPieChart from "./EmissionsPieChart";
-import { texts, additionalTexts } from "./TextsComponent";
-
-const textVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
-};
+import React, { useState } from 'react';
+import { Box, Button, Typography } from '@mui/material';
+import { texts, additionalTexts } from './TextsComponent';
 
 const MobileScrollingTextComponent = () => {
-    const [currentText, setCurrentText] = useState(0);
-    const containerRef = useRef(null);
+  const [activeStep, setActiveStep] = useState(0);
 
-    useEffect(() => {
-        const container = containerRef.current;
-        const handleScroll = () => {
-            const sectionHeight = container.scrollHeight / texts.length;
-            const currentIdx = Math.floor(container.scrollTop / sectionHeight);
-            setCurrentText(currentIdx);
-        };
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => Math.min(prevActiveStep + 1, texts.length - 1));
+  };
 
-        if (container) {
-            container.addEventListener("scroll", handleScroll);
-            return () => container.removeEventListener("scroll", handleScroll);
-        }
-    }, [texts.length]);
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => Math.max(prevActiveStep - 1, 0));
+  };
 
-    return (
-        <div style={{ flexDirection: "column", height: "70vh" }}>
-            <div
-                ref={containerRef}
-                style={{
-                    overflowY: "scroll",
-                    width: "100%",
-                    height: "70vh", // Adjust based on your design, leaving space for the pie chart
-                    scrollSnapType: "y mandatory",
-                }}>
-                {texts.map((text, index) => (
-                    <motion.div
-                        key={index}
-                        initial="hidden"
-                        animate="visible"
-                        variants={textVariants}
-                        style={{
-                            scrollSnapAlign: "start",
-                            minHeight: "80vh", 
-                            display: "flex",
-                            flexDirection: "column",
-                            justifyContent: "center",
-                            alignItems: "flex-start",
-                            textAlign: "left",
-                            padding: "20px",
-                        }}>
-                        <h1 style={{ color: index === currentText ? "#007bff" : "#000" }}>{text}</h1>
-                        <p>{additionalTexts[index]}</p>
-                    </motion.div>
-                ))}
-            </div>
-            <div style={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", marginTop: "20px" }}>
-                <EmissionsPieChart currentSection={currentText} totalSections={texts.length} />
-            </div>
-        </div>
-    );
+  return (
+    <Box sx={{ width: '100%', overflow: 'hidden', position: 'relative', height: '90%' }}> 
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          transition: 'transform 0.5s ease',
+          transform: `translateX(-${activeStep * 100}%)`,
+        }}
+      >
+        {texts.map((text, index) => (
+          <Box key={index} sx={{ width: '100%', flexShrink: 0, p: 1, boxSizing: 'border-box' }}> 
+            <Typography variant="h4" component="h1" gutterBottom>
+              {text}
+            </Typography>
+            <Typography>{additionalTexts[index]}</Typography>
+          </Box>
+        ))}
+      </Box>
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+        <Button onClick={handleBack} disabled={activeStep === 0} sx={{ marginRight: '10px' }}>
+          Back
+        </Button>
+        <Button onClick={handleNext} disabled={activeStep === texts.length - 1}>
+          Next
+        </Button>
+      </Box>
+    </Box>
+  );
 };
 
 export default MobileScrollingTextComponent;

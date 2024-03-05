@@ -76,7 +76,7 @@ const ScrollJourneyBottom = () => {
         <Timeline data={confirmation} />
       </motion.div>
 
-      <div ref={scrollRef} style={{ minHeight: "100vh" }}> {/* Ensuring this div is in view before starting text scroll */}
+      <div ref={scrollRef} style={{ minHeight: "90vh" }}> {/* Ensuring this div is in view before starting text scroll */}
         <p style={{ fontSize: "calc(5vw + 1rem)", margin: '0' }}>
           But what could have been
           <motion.span

@@ -61,6 +61,7 @@ const DesktopScrollingTextComponent = () => {
                     height: "70vh",
                     backgroundColor: "#e5e5e5",
                     borderRadius: "10px",
+                    marginRight: "20px",
                 }}
             >
                 {texts.map((text, index) => (
