@@ -31,25 +31,26 @@ const DesktopScrollingTextComponent = () => {
         <div style={{ display: "flex", flexDirection: "row", height: "70vh" }}>
             {/* Navigation Indicator */}
             <div style={{ marginRight: "20px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-                {texts.map((_, index) => (
-                    <motion.div
-                        key={index}
-                        style={{
-                            fontWeight: currentText === index ? "bold" : "normal", // Highlight the current text
-                            marginBottom: "10px",
-                            cursor: "pointer",
-                        }}
-                        whileHover={{ scale: 1.1 }}
-                        onClick={() => {
-                            // Optional: Allow clicking on the indicator to scroll to the section
-                            const sectionHeight = containerRef.current.scrollHeight / texts.length;
-                            containerRef.current.scrollTop = sectionHeight * index;
-                        }}
-                    >
-                        {index + 1}
-                    </motion.div>
-                ))}
-            </div>
+    {texts.map((_, index) => (
+        <motion.div
+            key={index}
+            style={{
+                fontWeight: currentText === index ? "bold" : "normal", // Highlight the current text
+                color: currentText === index ? "#3da9de" : "black", // Change text color to red if currentText matches the index
+                marginBottom: "10px",
+                cursor: "pointer",
+            }}
+            whileHover={{ scale: 1.1 }}
+            onClick={() => {
+                const sectionHeight = containerRef.current.scrollHeight / texts.length;
+                containerRef.current.scrollTop = sectionHeight * index;
+            }}
+        >
+            {index + 1}
+        </motion.div>
+    ))}
+</div>
+
 
             {/* Text Sections */}
             <div

@@ -100,6 +100,7 @@ const ScrollJourneyBottom = () => {
         </p>
         
         <MasterScrollingTextComponent />
+
       </div>
     </div>
   );
